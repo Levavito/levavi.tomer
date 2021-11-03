@@ -1,0 +1,20 @@
+*{
+    color: blue;
+    background-color: lightcyan;
+    font-family:'Times New Roman', Times, serif ;
+    font-size: 25px;
+    text-align: center;
+   
+}
+h1 {
+    color: black;
+    font-size: 40px;
+
+}
+.heading {
+    color: darkorange;
+}
+
+#Fname {
+    color: darksalmon;
+}
