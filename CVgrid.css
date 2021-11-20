@@ -65,6 +65,22 @@ body{
 div{
        text-align: center;
     }
+
+button{
+        height: 100%;
+        font-size: 50px;
+        animation-name: blink;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        border: 0px;
+}
+    
+@keyframes blink {
+        0% {background-color:rgb(117, 55, 47);border-radius: 0%;}
+        50%{background-color: rgb(223, 0, 45);border-radius: 100%;border: 2px;}
+        100%{background-color:rgb(117, 55, 47);border-radius: 0%;}
+}
+
         
     
 
