@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="cv.css">
+    <script src="cv.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cv</title>
+</head>
+<body onload="greet();">
+  
+ <div id="GridConteiner">
+        <div id="item1">
+            <h1 style="text-align: center;">Sine Up</h1>
+            <h2 id="P">wellcome</h2>
+        </div>
+        <div id="item2">
+            <form id="form" action="">
+                <label for="FName">Full Name</label><br>
+                <input class="input" type="text" name="FName" id=""><br><br>
+                <label for="Email">Email</label><br>
+                <input class="input" type="text" name="Email" id=""><br><br>
+                <label for="phone" class="label"> telephone number - validation</label><br>
+                <input class="input" name="phone" input type="tel" id="phone" pattern="[0][5][0-9]{8}" required placeholder="05x-xxxxxxx"><br>
+                <label for="pwd">Password</label><br>
+                <input class="input" type="password" id="pwd" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"><br>
+                <p> iq  validation</p>
+                <p>5*5-5=?</p>
+                <input class="input" id="iq" type="number"required>
+                <button onclick="myFunction()">check answer</button>
+                <p id="demo"></p>
+                <input type="submit">
+            </form>
+        </div>
+        <div id="item3">
+            <button id="buttoncat" onclick="catpic()">Click here for cat pic picture</button>
+        </div>
+    </div>
+    
+
+</body>
+
+</html>
