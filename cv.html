@@ -12,24 +12,25 @@
   
  <div id="GridConteiner">
         <div id="item1">
-            <h1 style="text-align: center;">Sine Up</h1>
-            <h2 id="P">wellcome</h2>
-        </div>
-        <div id="item2">
-            <form id="form" action="">
-                <label for="FName">Full Name</label><br>
-                <input class="input" type="text" name="FName" id=""><br><br>
-                <label for="Email">Email</label><br>
-                <input class="input" type="text" name="Email" id=""><br><br>
-                <label for="phone" class="label"> telephone number - validation</label><br>
-                <input class="input" name="phone" input type="tel" id="phone" pattern="[0][5][0-9]{8}" required placeholder="05x-xxxxxxx"><br>
-                <label for="pwd">Password</label><br>
-                <input class="input" type="password" id="pwd" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"><br>
-                <p> iq  validation</p>
+                <h1> IQ  validation</h1>
                 <p>5*5-5=?</p>
                 <input class="input" id="iq" type="number"required>
                 <button onclick="myFunction()">check answer</button>
                 <p id="demo"></p>
+                <h2 id="P">wellcome</h2>
+        </div>
+        <div id="item2">
+            <form id="form" action="">
+                <h1 style="text-align: center;">Sine Up</h1>
+                 <h3>after filling input press enter</h3>
+                <label for="FName">Full Name</label><br>
+                <input class="input" type="text" name="FName" id="" required><br><br>
+                <label for="Email">Email</label><br>
+                <input class="input" type="text" name="Email" id="" required><br><br>
+                <label for="phone" class="label"> telephone number - validation</label><br>
+                <input class="input" name="phone" input type="tel" id="phone" pattern="[0][5][0-9]{8}" required placeholder="05x-xxxxxxx"><br>
+                <label for="pwd">Password</label><br>
+                <input class="input" type="password" id="pwd" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required><br><br>
                 <input type="submit">
             </form>
         </div>
