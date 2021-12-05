@@ -11,8 +11,12 @@ def hello_world():  # put application's code here
 def US_func():  # put application's code here
     #TODO
     #DO SOMTHING WITH DB
-    return redirect('/catalog')
+    return redirect('/tomer')
 
+
+@app.route('/tomer')
+def TOMER_func():  # put application's code here
+    return 'tomer levavi page!'
 
 @app.route('/about' ,methods=['GET','POST'])
 def about_func():  # put application's code here
@@ -24,5 +28,5 @@ def about_func():  # put application's code here
 def catalog_func():  # put application's code here
     return 'catalog page!'
 
-if __name__ == '__main__':
+if __name__ == '_main_':
     app.run(debug=True)
