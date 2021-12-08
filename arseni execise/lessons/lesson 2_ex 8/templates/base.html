@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body style="background-color: aquamarine">
+
+    {% include 'Header.html' %}
+    <hr>
+    {% block tochen %}messege from base.html{% endblock %}
+    <hr>
+    {% include 'Footer.html' %}
+
+</body>
+</html>
