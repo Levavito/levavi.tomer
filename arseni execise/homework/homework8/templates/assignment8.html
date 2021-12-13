@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}assigment 8{% endblock %}
+{% block tochen %}
+    {{ super() }}
+
+{% if username %}
+      <h3> hello {{ username }}</h3>
+    {% else %}
+        <h3>Please log in to website...</h3>
+{% endif %}
+ <h1>About Me....</h1><br>
+    {% for key, value in profile.items() %}
+    <h2>{{ key }}:{{ value | upper() }}</h2>
+    {% endfor %}
+    <p> Name: {{ name | default('unknown' , true) | upper() }} {{ second_name | upper()}}</p>
+    <p> Name: {{ profile.name | default('unknown' , true) | upper() }} {{ profile.second_name | upper()}}</p>
+    <p> University:{{ university  | default('unspecified' , true)}}</p>
+    <h2>Degreas:</h2>
+    <ol>
+        {% for degree in degreas %}
+            <li>{{ degree }}</li>
+        {% endfor %}
+    </ol>
+    <h2>Hobies:</h2>
+    <ul>
+        {% for hobby in hobies %}
+            <li>{{ hobby }}</li>
+        {% endfor %}
+    </ul>
+    <ul>
+        <li>{{ hobies[0] }}</li>
+        <li>{{ hobies[1] }}</li>
+        <li>{{ hobies[2] }}</li>
+    </ul>
+{% endblock %}
