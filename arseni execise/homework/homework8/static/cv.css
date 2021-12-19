@@ -32,7 +32,7 @@
 }    
 
 #item3{
-    background-image: url("");
+    /*background-image: url("");*/
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -73,7 +73,7 @@ input.input{
     
     @font-face {
         font-family:Lobster-Regular;
-        src: url(Fonts/Lobster-Regular.ttf);
+        src: url(/static/Fonts/Lobster-Regular.ttf);
     }
     
 body{

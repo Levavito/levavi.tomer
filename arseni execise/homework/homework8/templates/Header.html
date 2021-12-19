@@ -1,3 +1,7 @@
 <header>
     <a href="/">Home</a>|<a href="/assignment8">assignment8</a>
+    |<a href="/assignment9">assignment9</a>
+     {% if session.username %}
+        |<a href="/logout">logout</a> | welcome {{ session.username }}
+    {% endif %}
 </header>

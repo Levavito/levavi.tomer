@@ -1,10 +1,22 @@
 from flask import Flask, redirect, url_for
 from flask import render_template
+from flask import request
+from flask import session
+
+
 app = Flask(__name__)
+app.secret_key = '1234'
+
+users = {'user1': {'name': 'Yossi', 'email': 'yo@gmail.com'},
+         'user2': {'name': 'Tomer', 'email': 'to@gmail.com'},
+         'user3': {'name': 'Ariel', 'email': 'ar@gmail.com'},
+         'user4': {'name': 'Bar', 'email': 'ba@gmail.com'},
+         'user5': {'name': 'Nir', 'email': 'ni@gmail.com'},
+         }
 
 
 @app.route('/')
-def Home():  # put application's code here
+def Home_func():  # put application's code here
     found = True
     if found:
         return render_template('cv1.html', username='tomer')
@@ -25,6 +37,35 @@ def about_func():  # put application's code here
                            degreas=['BSc', 'MSc', 'GrandMaster'],
                            hobies=('art', 'music', 'sql'))
 
+@app.route('/assignment9', methods=['GET', 'POST'])
+def login_func():  # put application's code here
+    print(users.values())
+    if request.method == 'GET':
+        if 'search_user' in request.args:
+            search_user = request.args['search_user']
+            return render_template('assignment9.html', username=session['username']
+                                                     , search_user=search_user
+                                                     , users=users)
+        return render_template('assignment9.html', username=session['username'], users=users)
+    if request.method == 'POST':
+        print('fffff')
+        #DB
+        username = request.form['username']
+        Password = request.form['password']
+        found = True
+        if found:
+            session['username'] = username
+            session['user_login'] = True
+            print('sssss')
+            return render_template('assignment9.html', username=username, users=users)
+        else:
+            print('mmmm')
+            return render_template('assignment9.html')
+
+@app.route('/logout')
+def logiout_func():  # put application's code here
+    session['username'] = ''
+    return render_template('cv1.html')
 
 @app.route('/catalog')
 def catalog_func():  # put application's code here
