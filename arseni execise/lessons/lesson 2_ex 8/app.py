@@ -2,6 +2,8 @@ from flask import Flask, redirect, url_for
 from flask import render_template
 from flask import request
 from flask import session
+from interact_with_DB import interact_db
+
 
 app = Flask(__name__)
 app.secret_key = '123'
@@ -60,6 +62,25 @@ def login_func():  # put application's code here
 def logiout_func():  # put application's code here
     session['username'] = ''
     return render_template('web.html')
+
+@app.route('/users')
+def users_func():  # put application's code here
+    query = 'select * from users'
+    users = interact_db(query=query, query_type='fetch')
+    return render_template('users.html', users=users)
+
+@app.route('/insert_user', methods=['POST'])
+def insert_user_func():  # put application's code here
+    #get the dadt
+    name = request.form['name']
+    email = request.form['email']
+    password = request.form['password']
+
+    query = "INSERT INTO users(name,email,password) VALUES ('%s', '%s', '%s');" % (name, email, password)
+    interact_db(query=query, query_type='commit')
+
+    return redirect('/users')
+
 
 
 

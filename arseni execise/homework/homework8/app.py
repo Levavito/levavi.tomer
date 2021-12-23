@@ -46,7 +46,7 @@ def login_func():  # put application's code here
             return render_template('assignment9.html', username=session['username']
                                                      , search_user=search_user
                                                      , users=users)
-        return render_template('assignment9.html', username=session['username'], users=users)
+        return render_template('assignment9.html', users=users)
     if request.method == 'POST':
         print('fffff')
         #DB
