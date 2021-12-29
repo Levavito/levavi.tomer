@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}back hand{% endblock %}
+{% block tochen %}
+    {{ super() }}
+    <h1>Req Backhand page!</h1>
+
+    <h2> pokemons</h2>
+    <form action="/req_backhand">
+        <input type="number" name="number">
+        <input type="submit" value="get pokemons">
+    </form>
+    {% if pokemons %}
+        {% for pokemon in pokemons %}
+            <h3>pokemon {{ pokemon.id }}:</h3>
+            <img src="{{ pokemon.sprites.front_default }}" alt="pokemon pic">
+            <h3>name {{ pokemon.name }}:</h3>
+            <h3>height {{ pokemon.height }}:</h3>
+            <h3>weight {{ pokemon.weight }}:</h3>
+            <hr><br>
+        {% endfor %}
+    {% endif %}
+
+    <script src="../static/js/fatch_example.js"></script>
+
+
+
+{% endblock %}
