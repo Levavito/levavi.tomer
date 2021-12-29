@@ -27,11 +27,11 @@ def insertUsers():
                             value ('%s', '%s', '%s');" % (name, email, password)
             interact_db(query=query, query_type='commit')
             # message
-            return redirect('/assignment10')
+            return redirect('/assignment10?p1=User-added')
         else:
             # message
             flash('this user name is already registered')
-            return redirect('/users')
+            return redirect('/assignment10')
     return render_template('assignment10.html', req_method=request.method)
 
 
@@ -45,7 +45,7 @@ def updateUsers():
                 (name, email, password, id)
         interact_db(query=query, query_type='commit')
         # message
-        return redirect('/assignment10')
+        return redirect('/assignment10?p1=User-update')
 
 
 
@@ -59,7 +59,7 @@ def deleteUsers():
         query = "delete from HwUsers.users where id='%s';" % userId
         interact_db(query=query, query_type='commit')
         #message
-        return redirect('/assignment10')
+        return redirect('/assignment10?p1=User-delete')
     else:
         # message
-        return redirect('/assignment10')
+        return redirect('/assignment10?p1=User-notfound')

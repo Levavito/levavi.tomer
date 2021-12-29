@@ -21,6 +21,7 @@
             ID: {{ user.id }} &emsp;Name: {{ user.name }} &emsp;Email: {{ user.email }}
         </li>  <!-- #name/email= the table's columns' names -->
     {% endfor %}
+    <h2 id="userAction"></h2>
     <hr>
 
     <h2>Update User:</h2>
@@ -32,4 +33,8 @@
         <input name="password" type="password" placeholder="enter your password">
         <input type="submit">
     </form>
+
+    <script>
+       change_acording_to_querry();
+    </script>
 {% endblock %}
