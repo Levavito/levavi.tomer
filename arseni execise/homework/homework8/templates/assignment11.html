@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %}assigment 11{% endblock %}
+
+{% block tochen %}
+     <h1>DB to JSON</h1>
+    {% if answer %}
+        <h2> Users from DB in a json format:</h2>
+        {{ answer }}
+    {% else %}
+        <h2> Get users from DB in a json format</h2>
+        <form action="/assignment11/users" method="GET"> <!--  post because dealing with passwords -->
+            <input type="submit" value="Get users in json format"> <!-- # value= what that will be written on the button -->
+        </form>
+    {% endif %}
+    <hr>
+    {% if non %}
+        <h2>get user backend</h2>
+        <form action="/assignment11/outer_source" method="POST">
+            <input type="number" name="backend">
+            <input type="submit" value="get user backend">
+        </form>
+
+        <h2> get user frontend</h2>
+        <form action="/assignment11/outer_source" method="POST"> <!--  post because dealing with passwords -->
+            <input type="number" name="frontend">
+            <input type="submit" value="get user frontend">
+        </form>
+    {% endif %}
+
+    {% if frontend %}
+        <h2>get user backend</h2>
+        <form action="/assignment11/outer_source" method="POST">
+            <input type="number" name="backend">
+            <input type="submit" value="get user backend">
+        </form>
+
+        <h2><u> single user frontend:</u></h2>
+        <mainassignment11 id="div11"></mainassignment11>
+        <script>
+            get_user({{ frontend }});
+        </script>
+    {% endif %}
+
+    {% if backend %}
+        <h2> get user frontend</h2>
+        <form action="/assignment11/outer_source" method="POST"> <!--  post because dealing with passwords -->
+            <input type="number" name="frontend">
+            <input type="submit" value="get user frontend">
+        </form>
+        <br>
+        <h2><u>single user backend:</u></h2>
+        <h3>user: {{ backend['data'].id }}</h3>
+        <img src="{{ backend['data'].avatar }}" alt="user pic">
+        <h3>first name: {{ backend['data'].first_name }}</h3>
+        <h3>last name: {{ backend['data'].last_name }}</h3>
+        <h3>email: {{ backend['data'].email }}</h3>
+        <hr><br>
+    {% endif %}
+
+{% endblock %}

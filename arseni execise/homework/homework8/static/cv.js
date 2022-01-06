@@ -1,5 +1,3 @@
-// wellcome haeder//
-
 const d = new Date();
 console.log(d);
 var h = d.getHours();
@@ -50,4 +48,10 @@ function getUrlParameter(sParam)
 function change_acording_to_querry(){
     var header = getUrlParameter('p1');
     document.getElementById('userAction').innerHTML = header;
-};
+}
+
+
+
+
+
+

@@ -41,6 +41,10 @@
     background-color: rgb(117, 55, 47);
     height: 66vh;}
 
+#div11 div{
+     text-align: left;
+}
+
     /*responsive web disine*/
 @media only screen and (max-width:600px ){
     body{

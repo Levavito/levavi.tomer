@@ -10,7 +10,7 @@
 #
 # async def async_gather():
 #     tasks = []
-#     for i in range(3):
+#     for i in range(20):
 #         tasks.append(asyncio.create_task(async_count(i)))
 #     await asyncio.gather(*tasks)
 #
@@ -26,13 +26,15 @@
 #
 #
 # def main_1():
-#     for i in range(3):
+#     for i in range(20):
 #         count(i)
 #
 #
 # if __name__ == "__main__":
 #     s = time.time()
-#     main_1()
-#     main_2()
+#     # main_1() #sync
+#     main_2() #asinc
 #     elapsed = time.time() - s
 #     print(f"Executed in {elapsed:0.2f} seconds.")
+#
+#

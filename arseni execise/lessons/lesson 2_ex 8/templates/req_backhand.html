@@ -7,8 +7,14 @@
     <h2> pokemons</h2>
     <form action="/req_backhand">
         <input type="number" name="number">
-        <input type="submit" value="get pokemons">
+        <input type="submit" value="sync - get pokemons">
     </form>
+    <br>
+    <form action="/req_backhand_async">
+        <input type="number" name="number">
+        <input type="submit" value="async - get pokemons">
+    </form>
+
     {% if pokemons %}
         {% for pokemon in pokemons %}
             <h3>pokemon {{ pokemon.id }}:</h3>
