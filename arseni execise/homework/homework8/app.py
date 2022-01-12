@@ -45,7 +45,7 @@ def about_func():  # put application's code here
 def login_func():  # put application's code here
     print(users.values())
     if request.method == 'GET':
-        if session['username']:
+        if session['username'] or 'username' in session:
             if 'search_user' in request.args:
                 search_user = request.args['search_user']
                 return render_template('assignment9.html', username=session['username']
