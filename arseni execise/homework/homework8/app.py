@@ -147,6 +147,25 @@ def outer_source_func():
         print("lama")
         return render_template('assignment11.html')
 
+@app.route('/assignment12/restapi_users', defaults={'user_id': 1})
+@app.route('/assignment12/restapi_users/<int:user_id>')
+def get_users_json_func(user_id):
+    query = 'SELECT * FROM HwUsers.users where id=%s;' % user_id
+    users = interact_db(query=query, query_type='fetch')
+    if len(users) == 0:
+        return_dict = {
+            'status': 'failed',
+            'message': 'user not found'
+        }
+    else:
+        return_dict = {
+            'status': 'success',
+            f'id': users[0].id,
+            'name': users[0].name,
+            'email': users[0].email,
+        }
+    return jsonify(return_dict)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
